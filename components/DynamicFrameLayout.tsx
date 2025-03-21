@@ -23,6 +23,7 @@ interface Frame {
   autoplayMode: "all" | "hover"
   isHovered: boolean
   label: string
+  linkAddress: string
 }
 
 const initialFrames: Frame[] = [
@@ -38,7 +39,8 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
-    label: "One One"
+    label: "One One",
+    linkAddress: "https://www.oneone.global/"
   },
   {
     id: 2,
@@ -52,7 +54,8 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
-    label: "Synergy"
+    label: "Ecology",
+    linkAddress: "https://take-1-bice.vercel.app/"
   },
   {
     id: 3,
@@ -66,7 +69,8 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
-    label: "Refined"
+    label: "Refined",
+    linkAddress: "https://immersive-experience.vercel.app/"
   },
   {
     id: 4,
@@ -80,7 +84,8 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
-    label: "Fluency"
+    label: "Fluency",
+    linkAddress: ""
   },
   {
     id: 5,
@@ -94,7 +99,8 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
-    label: "Design"
+    label: "Design",
+    linkAddress: ""
   },
   {
     id: 6,
@@ -108,7 +114,8 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
-    label: "Quest"
+    label: "Quest",
+    linkAddress: ""
   },
   {
     id: 7,
@@ -122,7 +129,8 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
-    label: "Ecology"
+    label: "Synergy",
+    linkAddress: ""
   },
   {
     id: 8,
@@ -136,7 +144,8 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
-    label: "Fusion"
+    label: "Fusion",
+    linkAddress: ""
   },
   {
     id: 9,
@@ -150,7 +159,8 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
-    label: "Harmony"
+    label: "Harmony",
+    linkAddress: ""
   },
 ]
 
@@ -302,9 +312,9 @@ export default function DynamicFrameLayout() {
             >
               <FrameComponent
                 video={frame.video}
-                width="100%"
-                height="100%"
-                className="absolute inset-0"
+                width={`${frame.defaultPos.w * 25}%`}
+                height={`${frame.defaultPos.h * 25}%`}
+                className={`${frame.defaultPos.x * 25}% ${frame.defaultPos.y * 25}%`}
                 corner={frame.corner}
                 edgeHorizontal={frame.edgeHorizontal}
                 edgeVertical={frame.edgeVertical}
@@ -322,6 +332,7 @@ export default function DynamicFrameLayout() {
                   hovered?.row === Math.floor(frame.defaultPos.y / 4) &&
                   hovered?.col === Math.floor(frame.defaultPos.x / 4)
                 }
+                linkAddress={frame.linkAddress}
               />
             </motion.div>
           )

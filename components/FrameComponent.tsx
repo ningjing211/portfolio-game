@@ -21,6 +21,7 @@ interface FrameComponentProps {
   showFrame: boolean
   autoplayMode: "all" | "hover"
   isHovered: boolean
+  linkAddress: string
 }
 
 export function FrameComponent({
@@ -42,6 +43,7 @@ export function FrameComponent({
   showFrame,
   autoplayMode,
   isHovered,
+  linkAddress,
 }: FrameComponentProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -107,39 +109,42 @@ export function FrameComponent({
                 }
               }}
             />
-            {/* Streamline Icon */}
-            <a href="https://www.oneone.global/" target="_blank">
-            <div className="absolute bottom-4 left-4 w-6 h-6 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-white/80"
-              >
-                <path
-                  d="M10 13C10.4295 13.5741 10.9774 14.0492 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0799 14.9404 15.7482 14.6898C16.4164 14.4392 17.0186 14.0471 17.514 13.543L20.514 10.543C21.4042 9.59716 21.8839 8.33625 21.8507 7.02733C21.8175 5.71841 21.2733 4.48366 20.3355 3.58235C19.3977 2.68104 18.1402 2.18933 16.8302 2.21015C15.5203 2.23097 14.2793 2.76392 13.371 3.70001L11.757 5.31401"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M14 11C13.5705 10.4259 13.0226 9.95083 12.3934 9.60707C11.7642 9.26331 11.0684 9.05889 10.3533 9.00768C9.63816 8.95646 8.92007 9.05964 8.25182 9.31023C7.58357 9.56082 6.98142 9.95294 6.48599 10.457L3.48599 13.457C2.59582 14.4028 2.11612 15.6637 2.14932 16.9727C2.18253 18.2816 2.7267 19.5163 3.66449 20.4177C4.60228 21.319 5.85976 21.8107 7.16975 21.7899C8.47974 21.769 9.72066 21.2361 10.629 20.3L12.243 18.686"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            {/* Title and Link */}
+            <div className="absolute bottom-4 left-4 flex items-center gap-2 z-50">
+              <div className="link title text-white/80">{label}</div>
+              {linkAddress && (
+                <a 
+                  href={linkAddress} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-6 h-6 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="text-white/80"
+                  >
+                    <path
+                      d="M10 13C10.4295 13.5704 11.0378 13.9217 11.6845 13.9712C12.3313 14.0208 12.9798 13.7756 13.5 13.28L15.72 11.06C16.2108 10.5618 16.4578 9.90183 16.4578 9.21752C16.4578 8.53322 16.2108 7.87319 15.72 7.375C15.2292 6.87681 14.5748 6.625 13.89 6.625C13.2052 6.625 12.5508 6.87681 12.06 7.375L11.66 7.79"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M14 11C13.5705 10.4296 12.9622 10.0783 12.3155 10.0288C11.6687 9.97924 11.0202 10.2244 10.5 10.72L8.28003 12.94C7.78919 13.4382 7.54224 14.0982 7.54224 14.7825C7.54224 15.4668 7.78919 16.1268 8.28003 16.625C8.77087 17.1232 9.42519 17.375 10.11 17.375C10.7948 17.375 11.4491 17.1232 11.94 16.625L12.34 16.21"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+              )}
             </div>
-            <div className="link title" style={{
-              position: 'absolute',
-              bottom: '14px',
-              left: '47px'
-            }}>{label}</div>
-            </a>
           </div>
         </div>
 
