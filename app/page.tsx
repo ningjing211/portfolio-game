@@ -16,17 +16,20 @@ export default function Home() {
     >
       <div className="w-full h-full flex flex-col md:flex-row items-start gap-8 md:gap-8">
         {/* Left Content */}
-        <div className="w-full md:w-[260px] flex-shrink-0 flex flex-col justify-between h-full">
+        <div className="w-full md:w-[280px] flex-shrink-0 flex flex-col justify-between h-full">
           <div className="flex flex-col gap-16">
             <h1
               className={`${ppEditorialNewUltralightItalic.className} text-4xl md:text-6xl font-light italic text-white/80 tracking-tighter leading-[130%]`}
-              style={{ fontSize: `${4 * headerSize}rem` }}
+              style={{ 
+                fontSize: `${3.5 * headerSize}rem`,
+                lineHeight: '1.2',
+                letterSpacing: '2px',
+                fontFamily: 'serif'
+              }}
             >
-              Brand
+              Conflux
               <br />
-              Designer
-              <br />
-              at Luma?
+              Exclusive
             </h1>
             <div
               className={`${inter.className} flex flex-col gap-12 text-white/50 text-sm font-light max-w-[300px]`}
@@ -35,31 +38,37 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="h-px bg-white/10 w-full" />
                 <p>
-                  Luma is looking to hire a multi-disciplinary Brand Designer to develop and maintain the brand identity
-                  and communicate the story of Luma to the world. Alongside members of the design team using product and
-                  research insights, you will help shape and define Luma's brand across product surfaces, social media,
-                  merchandise, marketing website, launch campaigns as well as other new channels.
+                  An innovative team that blends technology with humanity, focusing on future trends, digital content management, multidisciplinary media marketing, and everyday software development. Through poetic design and system integration, 
+                  <br></br>
+                  <br></br>
+                  we connect online and offline resources to promote environmental sustainability and heart-driven ventures, striving to create a digital future with warmth and meaningful value.
                 </p>
-                <p>
-                  You will use a combination of graphic design, motion design, web design and video production/editing
-                  skills across traditional and innovative tools to communicate in visually compelling and impactful
-                  ways.
-                </p>
-                <p>Here are some of our favorite works so far.</p>
                 <div className="h-px bg-white/10 w-full" />
               </div>
             </div>
             <Link
-              href="https://lumalabs.ai"
+              href="https://conflux-tech.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 relative opacity-80 hover:opacity-100 transition-opacity"
             >
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LumaLogo%201-MA3upjPymxFHKoHJgpdAUfZMeKGq3i.png"
-                alt="Luma Logo"
+                src="https://conflux-tech.com/wp-content/uploads/2025/03/conflux-game-favicon-48.png"
+                alt="Conflux Logo"
                 fill
                 className="object-contain"
+                loading="lazy"
+                decoding="async"
+                style={{
+                  position: 'absolute',
+                  height: '100%',
+                  width: '100%',
+                  left: 0,
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  color: 'transparent'
+                }}
               />
             </Link>
           </div>

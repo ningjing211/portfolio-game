@@ -27,7 +27,7 @@ interface Frame {
 const initialFrames: Frame[] = [
   {
     id: 1,
-    video: "https://static.cdn-luma.com/files/981e483f71aa764b/Company%20Thing%20Exported.mp4",
+    video: "https://conflux-tech.com/wp-content/uploads/2025/03/1.mp4",
     defaultPos: { x: 0, y: 0, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/bcf576df9c38b05f/1_corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/bcf576df9c38b05f/1_vert_update.png",
