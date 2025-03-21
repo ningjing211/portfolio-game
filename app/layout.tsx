@@ -5,7 +5,11 @@ import type React from "react"
 export const metadata = {
   title: "Dynamic Frame Layout",
   description: "A dynamic frame layout with custom fonts",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: 'https://conflux-tech.com/wp-content/uploads/2025/03/conflux-game-favicon-48.png',
+    shortcut: 'https://conflux-tech.com/wp-content/uploads/2025/03/conflux-game-favicon-48.png',
+  }
 }
 
 export default function RootLayout({

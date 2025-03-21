@@ -22,12 +22,13 @@ interface Frame {
   borderSize: number
   autoplayMode: "all" | "hover"
   isHovered: boolean
+  label: string
 }
 
 const initialFrames: Frame[] = [
   {
     id: 1,
-    video: "https://conflux-tech.com/wp-content/uploads/2025/03/1.mp4",
+    video: "/videos/1.mp4",
     defaultPos: { x: 0, y: 0, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/bcf576df9c38b05f/1_corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/bcf576df9c38b05f/1_vert_update.png",
@@ -37,10 +38,11 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
+    label: "One One"
   },
   {
     id: 2,
-    video: "https://static.cdn-luma.com/files/58ab7363888153e3/WebGL%20Exported%20(1).mp4",
+    video: "/videos/2.mp4",
     defaultPos: { x: 4, y: 0, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/bcf576df9c38b05f/2_corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/bcf576df9c38b05f/2_vert_update.png",
@@ -50,10 +52,11 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
+    label: "Synergy"
   },
   {
     id: 3,
-    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Jitter%20Exported%20Poster.mp4",
+    video: "/videos/3.mp4",
     defaultPos: { x: 8, y: 0, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/3d36d1e0dba2476c/3_Corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/3d36d1e0dba2476c/3_hori_update.png",
@@ -63,10 +66,11 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
+    label: "Refined"
   },
   {
     id: 4,
-    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Exported%20Web%20Video.mp4",
+    video: "/videos/4.mp4",
     defaultPos: { x: 0, y: 4, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/9e67e05f37e52522/4_corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/9e67e05f37e52522/4_hori_update.png",
@@ -76,10 +80,11 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
+    label: "Fluency"
   },
   {
     id: 5,
-    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Logo%20Exported.mp4",
+    video: "/videos/5.mp4",
     defaultPos: { x: 4, y: 4, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/9e67e05f37e52522/5_corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/9e67e05f37e52522/5_hori_update.png",
@@ -89,10 +94,11 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
+    label: "Design"
   },
   {
     id: 6,
-    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Animation%20Exported%20(4).mp4",
+    video: "/videos/6.mp4",
     defaultPos: { x: 8, y: 4, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/1199340587e8da1d/6_corner.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/1199340587e8da1d/6_corner-1.png",
@@ -102,10 +108,11 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
+    label: "Quest"
   },
   {
     id: 7,
-    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Illustration%20Exported%20(1).mp4",
+    video: "/videos/7.mp4",
     defaultPos: { x: 0, y: 8, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/b80b5aa00ccc33bd/7_corner.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/b80b5aa00ccc33bd/7_hori.png",
@@ -115,10 +122,11 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
+    label: "Ecology"
   },
   {
     id: 8,
-    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Art%20Direction%20Exported.mp4",
+    video: "/videos/8.mp4",
     defaultPos: { x: 4, y: 8, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/981e483f71aa764b/8_corner.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/981e483f71aa764b/8_hori.png",
@@ -128,10 +136,11 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
+    label: "Fusion"
   },
   {
     id: 9,
-    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Product%20Video.mp4",
+    video: "/videos/9.mp4",
     defaultPos: { x: 8, y: 8, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/981e483f71aa764b/9_corner.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/981e483f71aa764b/9_hori.png",
@@ -141,6 +150,7 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
+    label: "Harmony"
   },
 ]
 
@@ -305,7 +315,7 @@ export default function DynamicFrameLayout() {
                 onBorderThicknessChange={(value) => updateFrameProperty(frame.id, "borderThickness", value)}
                 onBorderSizeChange={(value) => updateFrameProperty(frame.id, "borderSize", value)}
                 showControls={showControls && !cleanInterface}
-                label={`Frame ${frame.id}`}
+                label={frame.label}
                 showFrame={showFrames}
                 autoplayMode={autoplayMode}
                 isHovered={

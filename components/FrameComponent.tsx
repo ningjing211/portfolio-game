@@ -108,8 +108,8 @@ export function FrameComponent({
               }}
             />
             {/* Streamline Icon */}
-            <a href="https://www.oneone.global/">
-            <div className="absolute top-4 left-4 w-6 h-6 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center">
+            <a href="https://www.oneone.global/" target="_blank">
+            <div className="absolute bottom-4 left-4 w-6 h-6 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center">
               <svg
                 width="20"
                 height="20"
@@ -134,7 +134,11 @@ export function FrameComponent({
                 />
               </svg>
             </div>
-            <h2>One One</h2>
+            <div className="link title" style={{
+              position: 'absolute',
+              bottom: '14px',
+              left: '47px'
+            }}>{label}</div>
             </a>
           </div>
         </div>
