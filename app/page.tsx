@@ -8,7 +8,7 @@ import Link from "next/link"
 
 export default function Home() {
   const [headerSize] = useState(1.2) // 120% is the default size
-  const [textSize] = useState(0.8) // 80% is the default size
+  const [textSize] = useState(1.0) // 100% is the default size
 
   return (
     <div
@@ -73,12 +73,12 @@ export default function Home() {
             </Link>
           </div>
           <a
-            href="https://lumalabs.ai/join?role=5d274587-f8fd-4f53-a5b6-8f85d586e1aa"
+            href="https://conflux-tech.com/"
             className="inline-block px-6 py-3 text-white/70 border border-white/20 rounded-full font-medium hover:bg-white/5 transition-colors text-center w-full max-w-[260px] text-sm mt-16"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Apply
+            Contact Us
           </a>
         </div>
 

@@ -232,7 +232,7 @@ export default function DynamicFrameLayout() {
               {showFrames ? "Hide Frames" : "Show Frames"}
             </label>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 hidden">
             <Switch
               id="autoplay-toggle"
               checked={autoplayMode === "all"}
