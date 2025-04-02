@@ -22,6 +22,7 @@ interface FrameComponentProps {
   autoplayMode: "all" | "hover"
   isHovered: boolean
   linkAddress: string
+  isMobile?: boolean
 }
 
 export function FrameComponent({
@@ -44,20 +45,21 @@ export function FrameComponent({
   autoplayMode,
   isHovered,
   linkAddress,
+  isMobile = false,
 }: FrameComponentProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
-    if (autoplayMode === "all") {
+    if (!isMobile && autoplayMode === "all") {
       videoRef.current?.play()
-    } else if (autoplayMode === "hover") {
+    } else if (!isMobile && autoplayMode === "hover") {
       if (isHovered) {
         videoRef.current?.play()
       } else {
         videoRef.current?.pause()
       }
     }
-  }, [isHovered, autoplayMode])
+  }, [isHovered, autoplayMode, isMobile])
 
   return (
     <div
@@ -90,25 +92,33 @@ export function FrameComponent({
               transition: "transform 0.3s ease-in-out",
             }}
           >
-            <video
-              className="w-full h-full object-cover"
-              src={video}
-              loop
-              muted
-              playsInline
-              autoPlay={autoplayMode === "all" || (autoplayMode === "hover" && isHovered)}
-              ref={videoRef}
-              onMouseEnter={(e) => {
-                if (autoplayMode === "hover") {
-                  e.currentTarget.play()
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (autoplayMode === "hover") {
-                  e.currentTarget.pause()
-                }
-              }}
-            />
+            {isMobile ? (
+              <img
+                className="w-full h-full object-cover"
+                src={video.replace('/videos/', '/temp-images/').replace('.mp4', '.jpg')}
+                alt={label}
+              />
+            ) : (
+              <video
+                className="w-full h-full object-cover"
+                src={video}
+                loop
+                muted
+                playsInline
+                autoPlay={autoplayMode === "all" || (autoplayMode === "hover" && isHovered)}
+                ref={videoRef}
+                onMouseEnter={(e) => {
+                  if (autoplayMode === "hover") {
+                    e.currentTarget.play()
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (autoplayMode === "hover") {
+                    e.currentTarget.pause()
+                  }
+                }}
+              />
+            )}
             {/* Title and Link */}
             <div className="absolute bottom-4 left-4 flex items-center gap-2 z-50 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-lg">
               <div className="link title text-white/80">{label}</div>
