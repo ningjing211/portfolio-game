@@ -85,7 +85,7 @@ const initialFrames: Frame[] = [
     autoplayMode: "all",
     isHovered: false,
     label: "Fluency",
-    linkAddress: "https://architecture-firm-lake.vercel.app/"
+    linkAddress: "https://architecture-firm-seven.vercel.app/"
   },
   {
     id: 5,

@@ -3,8 +3,8 @@ import { ppEditorialNewUltralightItalic, inter } from "./fonts"
 import type React from "react"
 
 export const metadata = {
-  title: "Dynamic Frame Layout",
-  description: "A dynamic frame layout with custom fonts",
+  title: "你最愛的那本作品集",
+  description: "An innovative team that blends technology with humanity, focusing on future trends, digital content management",
   generator: 'v0.dev',
   icons: {
     icon: 'https://conflux-tech.com/wp-content/uploads/2025/03/conflux-game-favicon-48.png',
