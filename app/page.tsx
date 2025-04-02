@@ -46,31 +46,42 @@ export default function Home() {
                 <div className="h-px bg-white/10 w-full" />
               </div>
             </div>
-            <Link
-              href="https://conflux-tech.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 relative opacity-80 hover:opacity-100 transition-opacity"
-            >
-              <Image
-                src="https://conflux-tech.com/wp-content/uploads/2025/03/conflux-game-favicon-48.png"
-                alt="Conflux Logo"
-                fill
-                className="object-contain"
-                loading="lazy"
-                decoding="async"
-                style={{
-                  position: 'absolute',
-                  height: '100%',
-                  width: '100%',
-                  left: 0,
-                  top: 0,
-                  right: 0,
-                  bottom: 0,
-                  color: 'transparent'
-                }}
-              />
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link
+                href="https://www.oneone.global/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 relative opacity-80 hover:opacity-100 transition-opacity"
+              >
+                <Image
+                  src="https://conflux-tech.com/wp-content/uploads/2025/04/milkshake.png"
+                  alt="Oneone Logo"
+                  fill
+                  className="object-contain"
+                  loading="lazy"
+                  decoding="async"
+                  style={{
+                    position: 'absolute',
+                    height: '100%',
+                    width: '100%',
+                    left: 0,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    color: 'transparent',
+                    backgroundColor: 'wheat'
+                  }}
+                />
+              </Link>
+              <a
+                href="https://www.oneone.global/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 text-sm hover:text-white transition-colors underline decoration-white/50 hover:decoration-white"
+              >
+                oneone.global
+              </a>
+            </div>
           </div>
           <a
             href="https://conflux-tech.com/"
