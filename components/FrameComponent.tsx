@@ -1,6 +1,7 @@
 "use client"
 import { Slider } from "@/components/ui/slider"
 import { useEffect, useRef } from "react"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 interface FrameComponentProps {
   video: string
@@ -22,7 +23,6 @@ interface FrameComponentProps {
   autoplayMode: "all" | "hover"
   isHovered: boolean
   linkAddress: string
-  isMobile?: boolean
 }
 
 export function FrameComponent({
@@ -45,21 +45,27 @@ export function FrameComponent({
   autoplayMode,
   isHovered,
   linkAddress,
-  isMobile = false,
 }: FrameComponentProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
-    if (!isMobile && autoplayMode === "all") {
+    if (autoplayMode === "all") {
       videoRef.current?.play()
-    } else if (!isMobile && autoplayMode === "hover") {
+    } else if (autoplayMode === "hover") {
       if (isHovered) {
         videoRef.current?.play()
       } else {
         videoRef.current?.pause()
       }
     }
-  }, [isHovered, autoplayMode, isMobile])
+  }, [isHovered, autoplayMode])
+
+  // 从视频路径中提取视频文件名，用于构建图片路径
+  const getImagePath = () => {
+    const videoFileName = video.split('/').pop()?.replace('.mp4', '')
+    return `/temp-images/${videoFileName}.jpg`
+  }
 
   return (
     <div
@@ -95,7 +101,7 @@ export function FrameComponent({
             {isMobile ? (
               <img
                 className="w-full h-full object-cover"
-                src={video.replace('/videos/', '/temp-images/').replace('.mp4', '.jpg')}
+                src={getImagePath()}
                 alt={label}
               />
             ) : (
