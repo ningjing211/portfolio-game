@@ -285,12 +285,8 @@ export default function DynamicFrameLayout() {
         </>
       )}
       <div
-        className="relative w-full h-full"
+        className="relative w-full h-full grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-4 auto-rows-[minmax(200px,_1fr)] md:auto-rows-fr"
         style={{
-          display: "grid",
-          gridTemplateRows: getRowSizes(),
-          gridTemplateColumns: getColSizes(),
-          gap: `${gapSize}px`,
           transition: "grid-template-rows 0.4s ease, grid-template-columns 0.4s ease",
         }}
       >
@@ -302,7 +298,7 @@ export default function DynamicFrameLayout() {
           return (
             <motion.div
               key={frame.id}
-              className="relative"
+              className="relative w-full aspect-[16/9] md:aspect-auto"
               style={{
                 transformOrigin,
                 transition: "transform 0.4s ease",
@@ -312,9 +308,9 @@ export default function DynamicFrameLayout() {
             >
               <FrameComponent
                 video={frame.video}
-                width={`${frame.defaultPos.w * 25}%`}
-                height={`${frame.defaultPos.h * 25}%`}
-                className={`${frame.defaultPos.x * 25}% ${frame.defaultPos.y * 25}%`}
+                width="100%"
+                height="100%"
+                className="w-full h-full"
                 corner={frame.corner}
                 edgeHorizontal={frame.edgeHorizontal}
                 edgeVertical={frame.edgeVertical}
@@ -324,14 +320,11 @@ export default function DynamicFrameLayout() {
                 onMediaSizeChange={(value) => updateFrameProperty(frame.id, "mediaSize", value)}
                 onBorderThicknessChange={(value) => updateFrameProperty(frame.id, "borderThickness", value)}
                 onBorderSizeChange={(value) => updateFrameProperty(frame.id, "borderSize", value)}
-                showControls={showControls && !cleanInterface}
+                showControls={showControls}
                 label={frame.label}
                 showFrame={showFrames}
                 autoplayMode={autoplayMode}
-                isHovered={
-                  hovered?.row === Math.floor(frame.defaultPos.y / 4) &&
-                  hovered?.col === Math.floor(frame.defaultPos.x / 4)
-                }
+                isHovered={hovered?.row === row && hovered?.col === col}
                 linkAddress={frame.linkAddress}
               />
             </motion.div>
