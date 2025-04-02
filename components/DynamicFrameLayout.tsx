@@ -39,8 +39,8 @@ const initialFrames: Frame[] = [
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
-    label: "One One",
-    linkAddress: "https://www.oneone.global/"
+    label: "Vibrant",
+    linkAddress: "https://lissom-home.vercel.app/"
   },
   {
     id: 2,
