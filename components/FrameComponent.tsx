@@ -110,7 +110,7 @@ export function FrameComponent({
               }}
             />
             {/* Title and Link */}
-            <div className="absolute bottom-4 left-4 flex items-center gap-2 z-50">
+            <div className="absolute bottom-4 left-4 flex items-center gap-2 z-50 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-lg">
               <div className="link title text-white/80">{label}</div>
               {linkAddress && (
                 <a 
