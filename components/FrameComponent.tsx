@@ -48,18 +48,21 @@ export function FrameComponent({
 }: FrameComponentProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const isMobile = useIsMobile()
+  const isImage = video.endsWith('.png') || video.endsWith('.jpg') || video.endsWith('.jpeg')
 
   useEffect(() => {
-    if (autoplayMode === "all") {
-      videoRef.current?.play()
-    } else if (autoplayMode === "hover") {
-      if (isHovered) {
-        videoRef.current?.play()
-      } else {
-        videoRef.current?.pause()
+    if (!isImage && videoRef.current) {
+      if (autoplayMode === "all") {
+        videoRef.current.play()
+      } else if (autoplayMode === "hover") {
+        if (isHovered) {
+          videoRef.current.play()
+        } else {
+          videoRef.current.pause()
+        }
       }
     }
-  }, [isHovered, autoplayMode])
+  }, [isHovered, autoplayMode, isImage])
 
   // 从视频路径中提取视频文件名，用于构建图片路径
   const getImagePath = () => {
@@ -77,7 +80,7 @@ export function FrameComponent({
       }}
     >
       <div className="relative w-full h-full overflow-hidden">
-        {/* Video with Border */}
+        {/* Video/Image with Border */}
         <div
           className="absolute inset-0 flex items-center justify-center"
           style={{
@@ -98,10 +101,10 @@ export function FrameComponent({
               transition: "transform 0.3s ease-in-out",
             }}
           >
-            {isMobile ? (
+            {isImage ? (
               <img
                 className="w-full h-full object-cover"
-                src={getImagePath()}
+                src={video}
                 alt={label}
               />
             ) : (
@@ -126,14 +129,14 @@ export function FrameComponent({
               />
             )}
             {/* Title and Link */}
-            <div className="absolute bottom-4 left-4 flex items-center gap-2 z-50 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-lg">
-              <div className="link title text-white/80">{label}</div>
-              {linkAddress && (
+            <div className="absolute bottom-4 left-4 flex items-center gap-2 z-50 bg-[rgb(33,145,165,0.8)] backdrop-blur-md px-4 py-2 rounded-lg border border-white/10">
+              <div className="link title text-white font-medium">{label}</div>
+              {(linkAddress || label === "Design") && (
                 <a 
-                  href={linkAddress} 
+                  href={label === "Design" ? "https://www.theharmony.fun/" : linkAddress} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-6 h-6 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer"
+                  className="w-6 h-6 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer"
                 >
                   <svg
                     width="16"

@@ -29,7 +29,7 @@ interface Frame {
 const initialFrames: Frame[] = [
   {
     id: 1,
-    video: "/videos/1.mp4",
+    video: "/cover-photos/01.png",
     defaultPos: { x: 0, y: 0, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/bcf576df9c38b05f/1_corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/bcf576df9c38b05f/1_vert_update.png",
@@ -44,7 +44,7 @@ const initialFrames: Frame[] = [
   },
   {
     id: 2,
-    video: "/videos/2.mp4",
+    video: "/cover-photos/02.png",
     defaultPos: { x: 4, y: 0, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/bcf576df9c38b05f/2_corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/bcf576df9c38b05f/2_vert_update.png",
@@ -59,7 +59,7 @@ const initialFrames: Frame[] = [
   },
   {
     id: 3,
-    video: "/videos/3.mp4",
+    video: "/cover-photos/03.png",
     defaultPos: { x: 8, y: 0, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/3d36d1e0dba2476c/3_Corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/3d36d1e0dba2476c/3_hori_update.png",
@@ -74,7 +74,7 @@ const initialFrames: Frame[] = [
   },
   {
     id: 4,
-    video: "/videos/4.mp4",
+    video: "/cover-photos/04.png",
     defaultPos: { x: 0, y: 4, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/9e67e05f37e52522/4_corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/9e67e05f37e52522/4_hori_update.png",
@@ -89,7 +89,7 @@ const initialFrames: Frame[] = [
   },
   {
     id: 5,
-    video: "/videos/5.mp4",
+    video: "/cover-photos/05.png",
     defaultPos: { x: 4, y: 4, w: 4, h: 4 },
     corner: "https://static.cdn-luma.com/files/9e67e05f37e52522/5_corner_update.png",
     edgeHorizontal: "https://static.cdn-luma.com/files/9e67e05f37e52522/5_hori_update.png",
